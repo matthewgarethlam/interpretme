@@ -13,15 +13,17 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
-coefstoprob <- function(model, logitprobit){
-  if(logitprobit=logit){
+coefstoprob <- function(model, logitorodds){
+  if(logitprobit=prob){
     oddsratio <- exp(model)
     prob <- oddsratio / (1 + oddsratio)
     return(prob)
   }
 
-  if(logitprobit=logit){
-
-
+  if(logitprobit=odds){
+      oddsratio <- exp(model)
+      return(oddsratio)
   }
+
+
 }
